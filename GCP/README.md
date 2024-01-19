@@ -18,32 +18,38 @@ gcloud auth application-default login
 
 0. To run Terraform, first create a project in GPC and a bucket in Google Cloud Storage as a backend. You also have to link the project to a billing account prior to creating a storage bucket. Use the following commands in Google SDK Shell to accomplish this:
 
+(Optional)
 ```bash
-gcloud projects create <YOUR_PROJECT_NAME> 
+gcloud projects create <YOUR_PROJECT_NAME>
+```
+
+1. Set the project and the billing to it.
+
+```bash 
 gcloud config set project <YOUR_PROJECT_NAME>
 gcloud billing projects link <YOUR_PROJECT_NAME> --billing-account=<YOUR_BILLING_ACCT_ID>
 gcloud storage buckets create gs://<YOUR_PROJECT_NAME>-tfstate --public-access-prevention --uniform-bucket-level-access
 ```
 
-1. Navigate to the "stage" directory using the command line:
+2. Navigate to the "stage" directory using the command line:
 
 ```bash
 cd <PATH>
 ```
 
-2. Initialize Terraform by executing the following command:
+3. Initialize Terraform by executing the following command:
 
 ```bash
 terraform init
 ```
 
-3. Before applying any changes, verify the resources that will be created by running the following command:
+4. Before applying any changes, verify the resources that will be created by running the following command:
 
 ```bash
 terraform plan
 ```
 
-4. Apply the Terraform changes by executing the following command:
+5. Apply the Terraform changes by executing the following command:
 
 ```bash
 terraform apply

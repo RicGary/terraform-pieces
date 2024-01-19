@@ -4,7 +4,7 @@
 resource "google_storage_bucket" "static" {
  project       = "testworkflow123"
 
- name          = "terraform_test_bucket_267324873287"
+ name          = "terraform_test_bucket_naiber"
  location      = "US-WEST1" # Read doc to find more locations
  storage_class = "STANDARD"
 
